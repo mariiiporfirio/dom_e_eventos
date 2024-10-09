@@ -25,11 +25,22 @@ const server = http.createServer((req, res) => {
             caminho += 'cardapio.html';
             break;
             res.statusCode = 200;
-        
         case '/produtos':
             res.statusCode = 301;
             res.setHeader('Location', '/cardapio')
             break;
+        case '/historia':
+            caminho += 'historia.html';
+            break;
+            res.statusCode = 200;
+        case '/sobre':
+            res.statusCode = 301;
+            res.setHeader('Location', '/historia')
+            break;
+        case '/doces':
+            caminho +='doces.html';
+            break;
+            res.statusCode = 200;
         default:
             caminho += '404.html';
             res.statusCode = 404;
